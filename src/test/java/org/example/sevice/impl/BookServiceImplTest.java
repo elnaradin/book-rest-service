@@ -58,7 +58,7 @@ class BookServiceImplTest {
         List<Long> categoryIds = List.of(1L, 2L, 3L);
         List<Category> categoryList = categoryIds
                 .stream()
-                .map(id -> new Category(id, "category " + id))
+                .map(id -> new Category(id, "category " + id, List.of()))
                 .toList();
 
         Book book = new Book();
@@ -78,7 +78,7 @@ class BookServiceImplTest {
         List<Long> categoryIds = List.of(1L, 2L, 3L);
         List<Category> categoryList = categoryIds
                 .stream()
-                .map(id -> new Category(id, "category " + id))
+                .map(id -> new Category(id, "category " + id, List.of()))
                 .toList();
 
         Book book = new Book();

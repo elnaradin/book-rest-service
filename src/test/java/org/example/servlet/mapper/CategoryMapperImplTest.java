@@ -22,7 +22,7 @@ class CategoryMapperImplTest {
 
     @Test
     void testMapEntityToDto() {
-        Category category = new Category(1L, "drama");
+        Category category = new Category(1L, "drama", List.of());
         OutComingCategoryDTO dto = categoryMapper.map(category);
         assertEquals(category.getId(), dto.getId());
         assertEquals(category.getName(), dto.getName());
@@ -40,8 +40,8 @@ class CategoryMapperImplTest {
 
     @Test
     void testMapEntityListToDtoList() {
-        Category category1 = new Category(1L, "drama");
-        Category category2 = new Category(2L, "sci-fi");
+        Category category1 = new Category(1L, "drama", List.of());
+        Category category2 = new Category(2L, "sci-fi", List.of());
         List<OutComingCategoryDTO> outComingCategoryDTOS = categoryMapper.map(List.of(category1, category2));
         assertEquals(2, outComingCategoryDTOS.size());
     }

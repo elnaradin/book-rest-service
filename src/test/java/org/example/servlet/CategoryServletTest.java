@@ -66,7 +66,7 @@ class CategoryServletTest {
 
     @Test
     void testGet() throws ServletException, IOException {
-        List<Category> categorys = List.of(new Category(1L, "drama"), new Category(2L, "comedy"));
+        List<Category> categorys = List.of(new Category(1L, "drama", List.of()), new Category(2L, "comedy", List.of()));
         when(categoryServiceMock.findAll())
                 .thenReturn(categorys);
         categoryServlet.doGet(request, response);

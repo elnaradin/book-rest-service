@@ -25,7 +25,7 @@ class BookMapperImplTest {
     @Test
     void testMapEntityToDto() {
         Author author = new Author(1L, "Tolstoy");
-        Category category = new Category(1L, "drama");
+        Category category = new Category(1L, "drama", List.of());
         Book book = new Book(1L, "drama", author, List.of(category));
         OutComingBookDTO dto = bookMapper.map(book);
         assertEquals(book.getId(), dto.getId());
@@ -47,7 +47,7 @@ class BookMapperImplTest {
     @Test
     void testMapEntityListToDtoList() {
         Author author = new Author(1L, "Tolstoy");
-        Category category = new Category(1L, "drama");
+        Category category = new Category(1L, "drama", List.of());
         Book book1 = new Book(1L, "drama", author, List.of(category));
         Book book2 = new Book(2L, "sci-fi", author, List.of(category));
         List<OutComingBookDTO> outComingBookDTOS = bookMapper.map(List.of(book1, book2));
