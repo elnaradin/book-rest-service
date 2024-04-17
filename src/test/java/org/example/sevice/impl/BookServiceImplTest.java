@@ -65,7 +65,7 @@ class BookServiceImplTest {
         book.setId(1L);
         book.setTitle("War and Peace");
         when(authorRepository.findById(book.getId()))
-                .thenReturn(Optional.of(new Author(authorId, "Leo Tolstoy")));
+                .thenReturn(Optional.of(new Author(authorId, "Leo Tolstoy", List.of())));
         when(categoryRepository.findById(categoryIds))
                 .thenReturn(categoryList);
         bookService.update(book, authorId, categoryIds);
@@ -85,7 +85,7 @@ class BookServiceImplTest {
         book.setId(1L);
         book.setTitle("War and Peace");
         when(authorRepository.findById(book.getId()))
-                .thenReturn(Optional.of(new Author(authorId, "Leo Tolstoy")));
+                .thenReturn(Optional.of(new Author(authorId, "Leo Tolstoy", null)));
         when(categoryRepository.findById(categoryIds))
                 .thenReturn(categoryList);
         bookService.add(book, authorId, categoryIds);

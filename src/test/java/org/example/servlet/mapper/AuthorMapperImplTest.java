@@ -22,7 +22,7 @@ class AuthorMapperImplTest {
 
     @Test
     void testMapEntityToDto() {
-        Author author = new Author(1L, "Tolstoy");
+        Author author = new Author(1L, "Tolstoy", List.of());
         OutComingAuthorDTO dto = authorMapper.map(author);
         assertEquals(author.getId(), dto.getId());
         assertEquals(author.getName(), dto.getName());
@@ -40,8 +40,8 @@ class AuthorMapperImplTest {
 
     @Test
     void testMapEntityListToDtoList() {
-        Author author1 = new Author(1L, "Tolstoy");
-        Author author2 = new Author(2L, "Dostoyevsky");
+        Author author1 = new Author(1L, "Tolstoy", List.of());
+        Author author2 = new Author(2L, "Dostoyevsky", List.of());
         List<OutComingAuthorDTO> outComingAuthorDTOS = authorMapper.map(List.of(author1, author2));
         assertEquals(2, outComingAuthorDTOS.size());
     }

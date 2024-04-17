@@ -64,7 +64,7 @@ class AuthorServletTest {
 
     @Test
     void testGet() throws ServletException, IOException {
-        List<Author> authors = List.of(new Author(1L, "Leo"), new Author(2L, "Dmitriy"));
+        List<Author> authors = List.of(new Author(1L, "Leo", List.of()), new Author(2L, "Dmitriy", List.of()));
         when(authorServiceMock.getAll())
                 .thenReturn(authors);
         authorServlet.doGet(request, response);
